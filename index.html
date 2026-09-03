@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Applied before first paint to avoid a flash of the wrong theme/language.
+      // content-loader.js re-confirms/owns this state once it runs.
+      (function () {
+        try {
+          var theme = localStorage.getItem('site-theme');
+          if (!theme) {
+            theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+          var lang = localStorage.getItem('site-lang') || 'en';
+          document.documentElement.setAttribute('lang', lang);
+          document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        } catch (e) {
+          /* localStorage unavailable (private mode, etc.) — defaults apply */
+        }
+      })();
+    </script>
+    <meta
+      id="meta-description"
+      name="description"
+      content="Mahmoud Hawa is an Enterprise Technology Executive focused on enterprise applications, digital transformation, and application portfolio governance."
+    />
+    <meta id="og-title" property="og:title" content="Mahmoud Hawa | Enterprise Technology Executive" />
+    <meta
+      id="og-description"
+      property="og:description"
+      content="Mahmoud Hawa is an Enterprise Technology Executive focused on enterprise applications, digital transformation, and application portfolio governance."
+    />
+    <meta id="og-image" property="og:image" content="media/Personal Photo.jpg" />
+    <meta property="og:type" content="profile" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Mahmoud Hawa | Enterprise Technology Executive</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#home" class="brand" id="nav-brand">
+          <svg class="brand-logo" viewBox="0 0 40 40" aria-hidden="true">
+            <defs>
+              <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0" class="brand-logo-stop-1" />
+                <stop offset="1" class="brand-logo-stop-2" />
+              </linearGradient>
+            </defs>
+            <rect x="0.5" y="0.5" width="39" height="39" rx="11" fill="url(#brandGrad)" />
+            <text x="20" y="26" text-anchor="middle" class="brand-logo-text">MH</text>
+          </svg>
+          <span class="sr-only" id="nav-brand-name">Mahmoud Hawa</span>
+        </a>
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Achievements</a>
+            <a href="#experience">Experience</a>
+            <a href="#entrepreneurship">Ventures</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="nav-controls">
+            <button id="lang-toggle" class="control-btn" type="button" aria-label="Switch language">AR</button>
+            <button id="theme-toggle" class="control-btn" type="button" aria-label="Switch theme">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4.2" />
+                <path d="M12 2.5v3M12 18.5v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2.5 12h3M18.5 12h3M4.9 19.1l2.1-2.1M17 7l2.1-2.1" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-inner" id="hero-mount"></div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container" id="about-mount"></div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container" id="services-mount"></div>
+      </section>
+
+      <section id="projects" class="section alt">
+        <div class="container" id="achievements-mount"></div>
+      </section>
+
+      <section class="section stats-section">
+        <div class="container" id="stats-mount"></div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="container" id="experience-mount"></div>
+      </section>
+
+      <section id="entrepreneurship" class="section">
+        <div class="container" id="entrepreneurship-mount"></div>
+      </section>
+
+      <section id="education" class="section alt education-section">
+        <div class="container" id="education-mount"></div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner" id="footer-mount"></div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script type="module" src="lib/content-loader.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
