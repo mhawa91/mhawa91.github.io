@@ -1,0 +1,58 @@
+name: Deploy site (production + staging)
+
+# Every push to main OR staging rebuilds and redeploys BOTH:
+#   - main content    -> published at the site root      (mahmoudhawa.com/)
+#   - staging content -> published under /staging/       (mahmoudhawa.com/staging/)
+# so whichever branch triggered the run, the full combined site is redeployed
+# consistently. Pushing to `main` never overwrites the staging preview, and
+# pushing to `staging` never touches production.
+
+on:
+  push:
+    branches: [main, staging]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (production root)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+
+      - name: Checkout staging (into /staging)
+        uses: actions/checkout@v4
+        with:
+          ref: staging
+          path: site/staging
+        continue-on-error: true
+
+      - name: Strip .git metadata from the published output
+        run: rm -rf site/.git site/staging/.git
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
