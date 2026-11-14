@@ -47,6 +47,23 @@ jobs:
           persist-credentials: false
         continue-on-error: true
 
+      - name: Prerender static HTML
+        shell: bash
+        run: |
+          set -euo pipefail
+          prerender_tree() {
+            local src="$1"
+            if [ -f "$src/scripts/prerender.mjs" ]; then
+              node "$src/scripts/prerender.mjs" "$src"
+            else
+              echo "::notice::No prerender script in $src — publishing the shell as-is."
+            fi
+          }
+          prerender_tree src/main
+          if [ -f src/staging/index.html ]; then
+            prerender_tree src/staging
+          fi
+
       - name: Assemble published output (allow-list)
         shell: bash
         run: |
@@ -56,7 +73,7 @@ jobs:
           publish() {
             local src="$1" dest="$2"
             mkdir -p "$dest"
-            for item in index.html content.md ar assets lib media .nojekyll; do
+            for item in index.html content.md ar assets lib media services favicon.ico site.webmanifest .nojekyll; do
               if [ -e "$src/$item" ]; then
                 cp -R "$src/$item" "$dest/"
               fi
@@ -69,9 +86,24 @@ jobs:
           if [ -f src/main/CNAME ]; then
             cp src/main/CNAME public/CNAME
           fi
+          # Root-only files (served once, from production): crawler rules,
+          # the sitemap, llms.txt, and the RFC 9116 security contact.
+          for item in robots.txt sitemap.xml llms.txt; do
+            if [ -f "src/main/$item" ]; then
+              cp "src/main/$item" "public/$item"
+            fi
+          done
+          if [ -f src/main/.well-known/security.txt ]; then
+            mkdir -p public/.well-known
+            cp src/main/.well-known/security.txt public/.well-known/security.txt
+          fi
 
           if [ -f src/staging/index.html ]; then
             publish src/staging public/staging
+            # Keep the staging preview out of search engines with a static tag
+            # in the served HTML (not only via JS).
+            sed -i 's|<meta charset="UTF-8" />|&\n    <meta name="robots" content="noindex, nofollow" />|' public/staging/index.html
+            grep -q 'name="robots" content="noindex, nofollow"' public/staging/index.html
           else
             echo "::notice::No staging branch content found - publishing production only."
           fi
