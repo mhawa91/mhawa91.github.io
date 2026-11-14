@@ -79,7 +79,6 @@ The site serves as a personal landing page and digital presence for:
 - Role: Enterprise Technology Executive | Application Portfolio Management | Digital Transformation
 - Location: Riyadh, Saudi Arabia
 - Email: mahmoud.hawa91@gmail.com
-- Phone: +966 540 33 6668
 - LinkedIn: linkedin.com/in/hawamahmoud
 - Experience: 12+ years across enterprise apps, digital transformation, ERP, BI, and process automation
 - Current role: Business Applications & BI Manager at AL-AYUNI Investment & Contracting Company
@@ -175,7 +174,7 @@ The site is currently configured as a lightweight static HTML/CSS portfolio and 
 - Fixed a bidi (bidirectional text) rendering bug: the phone number and email
   render inside RTL (Arabic) page flow, and Unicode's bidi algorithm can
   visually reorder space-separated digit groups and neutral characters like
-  "+" — so `+966 540 33 6668` could render with segments out of order in
+  "+" — so a space-separated phone number could render with segments out of order in
   Arabic mode even though the underlying text is identical to English. Fixed
   by wrapping both in `<bdi dir="ltr">` inside `renderFooter()` in
   `lib/content-loader.js`, which forces correct left-to-right rendering
