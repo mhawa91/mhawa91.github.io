@@ -37,15 +37,16 @@
 -->
 ---
 title: Mahmoud Hawa | Enterprise Applications & Digital Transformation Leader
-description: Mahmoud Hawa is an enterprise applications and digital transformation leader in Riyadh with 12+ years across ERP, IT governance, BI & analytics, and AI adoption.
+description: Mahmoud Hawa is an enterprise applications and digital transformation leader in Riyadh with 12+ years across ERP, IT governance, and AI adoption.
 name: Mahmoud Hawa
 tagline: Enterprise Applications & Digital Transformation Leader | ERP | IT Governance | BI & Analytics | AI Adoption
 location: Riyadh, Saudi Arabia
 email: mahmoud.hawa91@gmail.com
-phone: +966 540 33 6668
-phone_href: +966540336668
-linkedin_url: https://linkedin.com/in/hawamahmoud
-photo: media/Personal Photo.jpg
+linkedin_url: https://www.linkedin.com/in/hawamahmoud
+photo: media/photo-800.webp
+photo_srcset: media/photo-420.webp 420w, media/photo-800.webp 800w
+photo_fallback: media/Personal Photo.jpg
+og_image: media/og-cover.png
 resume: media/Mahmoud Hawa CV.pdf
 ---
 

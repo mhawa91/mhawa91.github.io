@@ -501,6 +501,10 @@ html[dir="rtl"] .hero-copy h1 {
   place-items: center;
 }
 
+.profile-card picture {
+  display: contents;
+}
+
 .profile-photo {
   width: 78%;
   height: auto;
@@ -1370,3 +1374,14 @@ html[dir="rtl"] .footer-copy h3 {
     translate: 0 0 !important;
   }
 }
+
+/* Space reserved while content-loader fills empty mounts (limits layout shift). */
+#hero-mount { min-height: 28rem; }
+#stats-mount { min-height: 8.5rem; }
+#about-mount { min-height: 18rem; }
+#services-mount { min-height: 24rem; }
+#achievements-mount { min-height: 20rem; }
+#experience-mount { min-height: 32rem; }
+#entrepreneurship-mount { min-height: 16rem; }
+#education-mount { min-height: 28rem; }
+#footer-mount { min-height: 12rem; }
