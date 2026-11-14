@@ -61,3 +61,43 @@ document.addEventListener('DOMContentLoaded', () => {
   updateNavSpy();
   updateBackToTop();
 });
+
+// Soft fade-up as cards scroll into view. Purely decorative: skipped when the
+// visitor prefers reduced motion or the browser lacks IntersectionObserver,
+// and anything already on screen is shown immediately.
+(function () {
+  const REVEAL_SELECTOR =
+    '.section-heading, .stat-tile, .about-grid, .skill-grid, .service-card, .project-card, .timeline-item, .edu-card';
+  let observer = null;
+
+  document.addEventListener('content:rendered', () => {
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || !('IntersectionObserver' in window)) return;
+
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.05 }
+    );
+
+    document.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+
+    // Safety net: never leave content invisible if the observer misfires.
+    window.setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.in)').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) el.classList.add('in');
+      });
+    }, 1200);
+  });
+})();

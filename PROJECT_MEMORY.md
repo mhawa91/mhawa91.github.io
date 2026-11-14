@@ -215,3 +215,37 @@ The site is currently configured as a lightweight static HTML/CSS portfolio and 
 - Each run copies the whole project into `D:\AI\personal-website-backups\<yyyyMMdd_HHmmss>\` (excluding `.git` and `.claude`).
 - Only the most recent 20 backups are kept; older ones are pruned automatically.
 - To roll back: copy the desired timestamped folder's contents back over the project.
+
+## CV refresh, mobile redesign and security hardening (2026-11-14)
+- **Content** (`content.md`, `ar/content.md`) re-aligned to the updated CV:
+  new headline ("Enterprise Applications & Digital Transformation Leader |
+  ERP | IT Governance | BI & Analytics | AI Adoption"), new summary, full
+  experience bullets, Unicharm shown as ONE role (Business Intelligence
+  Section Head, Nov 2018 — Oct 2024; the separate "BI Specialist" entry was
+  removed to match the CV), company descriptors (`note` attribute), degree
+  years, the five training items with provider and date, and a new Volunteer
+  card. The credentials card is titled "Certifications & Professional
+  Training" and each item says "Training", exactly as the CV words it.
+- **Downloadable CV is still the OLD PDF** (`media/Mahmoud Hawa Business
+  Application.pdf`). The updated PDF was only available as text during this
+  session — drop the new file into `media/` and update the `resume:` line in
+  both content files.
+- **Mobile UI**: compact sticky header with a menu button (slide-down panel,
+  closes on link tap / Escape / outside tap), profile-style centered hero,
+  focus-area chips (from the `tagline` parts after the first "|"), stats moved
+  directly under the hero as a 2-column card grid, icon-left service cards,
+  experience cards that show 3 bullets with a "Show more" fold, 44px+ tap
+  targets, safe-area insets, reduced-motion support, soft scroll reveal.
+  Previously missing styles (`.skill-grid`, `.edu-grid`, `.contact-links`,
+  timeline bullets) now exist. RTL uses CSS logical properties.
+- **Security**: all content values are HTML-escaped and links scheme-checked
+  in `lib/content-loader.js`; strict CSP meta tag (no inline scripts/styles —
+  the pre-paint theme/language script moved to `assets/js/boot.js`);
+  localStorage values validated against an allow-list; error banner no longer
+  injects HTML; workflow actions pinned to commit SHAs with least-privilege
+  job permissions; the deploy publishes an allow-list of site files only (the
+  whole repo, including this file and the scripts, used to be served from the
+  website); `/staging/` gets `noindex`; "Enforce HTTPS" turned on in the
+  GitHub Pages settings.
+- Verified in a real browser at 390px and desktop widths, both languages and
+  both themes, with no CSP violations.

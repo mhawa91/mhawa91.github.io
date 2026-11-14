@@ -78,7 +78,28 @@ From the project folder:
 - Add contact form or direct messaging integration
 - Expand reusable frontend utilities in `lib/` and `hooks/`
 - Design a proper Open Graph share-banner image (currently reuses the profile
-  photo as a placeholder) and switch `og:image`/photo paths to absolute URLs
-  once a real domain exists
-- Pick a hosting target and deploy (nothing is published yet — the site only
-  runs locally via `start-site.ps1`)
+  photo as a placeholder)
+
+## Publishing
+
+The site is hosted on GitHub Pages at https://mahmoudhawa.com, deployed by
+`.github/workflows/pages.yml`:
+
+- push to `staging` → preview at https://mahmoudhawa.com/staging/ (not indexed
+  by search engines)
+- push to `main` → production at https://mahmoudhawa.com/
+
+Only real website files are published (`index.html`, `content.md`, `ar/`,
+`assets/`, `lib/`, `media/`). Notes, scripts and editor config stay in the
+repository and are not served from the website.
+
+## Security rules
+
+- Content files are plain text: `lib/content-loader.js` HTML-escapes every
+  value and only allows `http(s)`, `mailto`, `tel` and relative links.
+- `index.html` sets a strict Content-Security-Policy. **No inline `<script>`,
+  no `style="..."` attributes, no `onclick="..."`** — they are blocked. Put
+  JavaScript in a file and styling in `assets/css/styles.css`.
+- A new external resource (font, script, image host) must be added to the CSP
+  `<meta>` tag in `index.html`, otherwise the browser will refuse to load it.
+- Keep GitHub Actions pinned to full commit SHAs in the workflow.

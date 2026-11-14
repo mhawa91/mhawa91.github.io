@@ -2,40 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      // Applied before first paint to avoid a flash of the wrong theme/language.
-      // content-loader.js re-confirms/owns this state once it runs.
-      (function () {
-        try {
-          var theme = localStorage.getItem('site-theme');
-          if (!theme) {
-            theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-          }
-          document.documentElement.setAttribute('data-theme', theme);
-          var lang = localStorage.getItem('site-lang') || 'en';
-          document.documentElement.setAttribute('lang', lang);
-          document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-        } catch (e) {
-          /* localStorage unavailable (private mode, etc.) — defaults apply */
-        }
-      })();
-    </script>
+    <!--
+      Content-Security-Policy: only this site's own scripts, styles, images and
+      content files may load, plus Google Fonts. Inline scripts and inline
+      styles are blocked on purpose — keep JS in files and styling in
+      assets/css/styles.css. (frame-ancestors / X-Frame-Options need a real
+      HTTP header, which GitHub Pages cannot send.)
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta id="meta-theme-color" name="theme-color" content="#0b1020" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="assets/js/boot.js"></script>
     <meta
       id="meta-description"
       name="description"
-      content="Mahmoud Hawa is an Enterprise Technology Executive focused on enterprise applications, digital transformation, and application portfolio governance."
+      content="Mahmoud Hawa is an enterprise applications and digital transformation leader in Riyadh with 12+ years across ERP, IT governance, BI &amp; analytics, and AI adoption."
     />
-    <meta id="og-title" property="og:title" content="Mahmoud Hawa | Enterprise Technology Executive" />
+    <meta id="og-title" property="og:title" content="Mahmoud Hawa | Enterprise Applications &amp; Digital Transformation Leader" />
     <meta
       id="og-description"
       property="og:description"
-      content="Mahmoud Hawa is an Enterprise Technology Executive focused on enterprise applications, digital transformation, and application portfolio governance."
+      content="Mahmoud Hawa is an enterprise applications and digital transformation leader in Riyadh with 12+ years across ERP, IT governance, BI &amp; analytics, and AI adoption."
     />
-    <meta id="og-image" property="og:image" content="media/Personal Photo.jpg" />
+    <meta id="og-image" property="og:image" content="https://mahmoudhawa.com/media/Personal%20Photo.jpg" />
+    <meta property="og:url" content="https://mahmoudhawa.com/" />
     <meta property="og:type" content="profile" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <title>Mahmoud Hawa | Enterprise Technology Executive</title>
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://mahmoudhawa.com/" />
+    <title>Mahmoud Hawa | Enterprise Applications &amp; Digital Transformation Leader</title>
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,8 +46,10 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
-      <nav class="nav container">
+      <nav class="nav container" aria-label="Primary">
         <a href="#home" class="brand" id="nav-brand">
           <svg class="brand-logo" viewBox="0 0 40 40" aria-hidden="true">
             <defs>
@@ -62,7 +64,7 @@
           <span class="sr-only" id="nav-brand-name">Mahmoud Hawa</span>
         </a>
         <div class="nav-right">
-          <div class="nav-links">
+          <div class="nav-links" id="nav-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#projects">Achievements</a>
@@ -74,38 +76,48 @@
           <div class="nav-controls">
             <button id="lang-toggle" class="control-btn" type="button" aria-label="Switch language">AR</button>
             <button id="theme-toggle" class="control-btn" type="button" aria-label="Switch theme">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="4.2" />
                 <path d="M12 2.5v3M12 18.5v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2.5 12h3M18.5 12h3M4.9 19.1l2.1-2.1M17 7l2.1-2.1" />
               </svg>
+            </button>
+            <button
+              id="nav-toggle"
+              class="control-btn nav-toggle"
+              type="button"
+              aria-label="Open menu"
+              aria-expanded="false"
+              aria-controls="nav-links"
+            >
+              <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
             </button>
           </div>
         </div>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <section id="home" class="hero">
         <div class="container hero-inner" id="hero-mount"></div>
+      </section>
+
+      <section class="section stats-section" aria-label="Key figures">
+        <div class="container" id="stats-mount"></div>
       </section>
 
       <section id="about" class="section">
         <div class="container" id="about-mount"></div>
       </section>
 
-      <section id="services" class="section">
+      <section id="services" class="section alt">
         <div class="container" id="services-mount"></div>
       </section>
 
-      <section id="projects" class="section alt">
+      <section id="projects" class="section">
         <div class="container" id="achievements-mount"></div>
       </section>
 
-      <section class="section stats-section">
-        <div class="container" id="stats-mount"></div>
-      </section>
-
-      <section id="experience" class="section">
+      <section id="experience" class="section alt">
         <div class="container" id="experience-mount"></div>
       </section>
 
@@ -123,10 +135,14 @@
     </footer>
 
     <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>
+
+    <noscript>
+      <p class="noscript-note">This site needs JavaScript to display its content.</p>
+    </noscript>
 
     <script type="module" src="lib/content-loader.js"></script>
     <script src="assets/js/main.js"></script>

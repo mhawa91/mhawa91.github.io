@@ -6,16 +6,21 @@ name: Deploy site (production + staging)
 # so whichever branch triggered the run, the full combined site is redeployed
 # consistently. Pushing to `main` never overwrites the staging preview, and
 # pushing to `staging` never touches production.
+#
+# Security notes:
+#   - Third-party actions are pinned to full commit SHAs (the tag is kept in a
+#     trailing comment) so a moved/compromised tag cannot change what runs.
+#   - Only the files the website actually needs are published (allow-list in
+#     the "Assemble" step). Project notes, scripts, editor config and docs
+#     stay in the repository and are NOT served from the website.
+#   - Jobs get the minimum token permissions they need.
 
 on:
   push:
     branches: [main, staging]
   workflow_dispatch: {}
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: {}
 
 concurrency:
   group: pages
@@ -24,35 +29,71 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout main (production root)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: main
-          path: site
+          path: src/main
+          persist-credentials: false
 
       - name: Checkout staging (into /staging)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           ref: staging
-          path: site/staging
+          path: src/staging
+          persist-credentials: false
         continue-on-error: true
 
-      - name: Strip .git metadata from the published output
-        run: rm -rf site/.git site/staging/.git
+      - name: Assemble published output (allow-list)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Copy only real website files from one checkout into a target dir.
+          publish() {
+            local src="$1" dest="$2"
+            mkdir -p "$dest"
+            for item in index.html content.md ar assets lib media .nojekyll; do
+              if [ -e "$src/$item" ]; then
+                cp -R "$src/$item" "$dest/"
+              fi
+            done
+            # Developer notes that live next to the site code.
+            find "$dest" -type f \( -name 'README.md' -o -name '*.ps1' \) -delete
+          }
+
+          publish src/main public
+          if [ -f src/main/CNAME ]; then
+            cp src/main/CNAME public/CNAME
+          fi
+
+          if [ -f src/staging/index.html ]; then
+            publish src/staging public/staging
+          else
+            echo "::notice::No staging branch content found - publishing production only."
+          fi
+
+          test -f public/index.html
+          echo "Published files:"
+          (cd public && find . -type f | sort)
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
-          path: site
+          path: public
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
