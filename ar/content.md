@@ -12,8 +12,6 @@ name: محمود حوا
 tagline: قائد تطبيقات المؤسسات والتحول الرقمي | أنظمة ERP | حوكمة تقنية المعلومات | ذكاء الأعمال والتحليلات | تبنّي الذكاء الاصطناعي
 location: الرياض، المملكة العربية السعودية
 email: mahmoud.hawa91@gmail.com
-phone: +966 540 33 6668
-phone_href: +966540336668
 linkedin_url: https://linkedin.com/in/hawamahmoud
 photo: media/Personal Photo.jpg
 resume: media/Mahmoud Hawa CV.pdf
