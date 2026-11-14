@@ -46,7 +46,7 @@ phone: +966 540 33 6668
 phone_href: +966540336668
 linkedin_url: https://linkedin.com/in/hawamahmoud
 photo: media/Personal Photo.jpg
-resume: media/Mahmoud Hawa Business Application.pdf
+resume: media/Mahmoud Hawa CV.pdf
 ---
 
 ## Hero

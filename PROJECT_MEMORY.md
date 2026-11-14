@@ -71,7 +71,7 @@ The site serves as a personal landing page and digital presence for:
 - Added project folder structure for future work: `docs/`, `lib/`, `hooks/`, and `scripts/`.
 
 ## Media files
-- `media/Mahmoud Hawa Business Application.pdf` – current resume copy
+- `media/Mahmoud Hawa CV.pdf` – current resume copy
 - `media/Personal Photo.jpg` – personal profile photo
 
 ## Resume-based content highlights used
@@ -226,10 +226,11 @@ The site is currently configured as a lightweight static HTML/CSS portfolio and 
   years, the five training items with provider and date, and a new Volunteer
   card. The credentials card is titled "Certifications & Professional
   Training" and each item says "Training", exactly as the CV words it.
-- **Downloadable CV is still the OLD PDF** (`media/Mahmoud Hawa Business
-  Application.pdf`). The updated PDF was only available as text during this
-  session — drop the new file into `media/` and update the `resume:` line in
-  both content files.
+- **Downloadable CV** is now `media/Mahmoud Hawa CV.pdf` (the old `Mahmoud
+  Hawa Business Application.pdf` was removed). The original updated PDF was
+  never available as a file in the session, so this PDF was REBUILT from its
+  exact text and layout (HTML printed to PDF, Letter size, 2 pages). To use
+  the original file instead, overwrite it in `media/` under the same name.
 - **Mobile UI**: compact sticky header with a menu button (slide-down panel,
   closes on link tap / Escape / outside tap), profile-style centered hero,
   focus-area chips (from the `tagline` parts after the first "|"), stats moved
