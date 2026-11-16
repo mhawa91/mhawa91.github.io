@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
-import { parseContent, renderMounts, renderArticle, renderFooter, NAV_MAP, esc } from '../lib/content-loader.js';
+import { parseContent, renderMounts, renderArticle, renderFooter, NAV_MAP, esc, visibleStepTitle } from '../lib/content-loader.js';
 import { t } from '../lib/i18n.js';
 
 const SITE = 'https://mahmoudhawa.com';
@@ -143,7 +143,7 @@ function injectSchema(html, sections) {
       step: sections.How.entries.map((entry, index) => ({
         '@type': 'HowToStep',
         position: index + 1,
-        name: entry.title,
+        name: visibleStepTitle(entry.title),
         text: answerText(entry),
       })),
     });
