@@ -590,37 +590,9 @@ html[dir="rtl"] .hero-copy h1 {
   background: var(--panel);
 }
 
-.status-card {
-  position: absolute;
-  inset-inline-end: 1.25rem;
-  bottom: 1.25rem;
-  background: var(--overlay-strong);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 0.75rem 1rem;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 0.5rem;
-  align-items: center;
-}
 
-.status-card span {
-  color: var(--muted);
-  font-size: 0.75rem;
-}
 
-.status-card strong {
-  grid-column: 2;
-  font-size: 0.95rem;
-}
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--success);
-  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.18);
-}
 
 /* ==========================================================================
    Sections
@@ -1011,13 +983,13 @@ html:not(.js) .timeline-item .highlights li.extra {
   align-items: center;
 }
 
-.footer-copy h3 {
+.footer-copy .footer-heading {
   margin: 0;
   font-size: clamp(1.5rem, 2.6vw, 2.2rem);
   line-height: 1.25;
 }
 
-html[dir="rtl"] .footer-copy h3 {
+html[dir="rtl"] .footer-copy .footer-heading {
   line-height: 1.5;
 }
 
@@ -1240,31 +1212,9 @@ html[dir="rtl"] .footer-copy h3 {
     box-shadow: 0 14px 34px rgba(56, 189, 248, 0.22);
   }
 
-  .status-card {
-    position: static;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.35rem 0.5rem;
-    padding: 0.45rem 0.9rem;
-    border-radius: 999px;
-    background: var(--surface-tint);
-  }
 
-  .status-card span {
-    font-size: 0.8rem;
-  }
 
-  .status-card strong {
-    font-size: 0.8rem;
-    color: var(--accent);
-  }
 
-  .status-card strong::before {
-    content: "·";
-    margin-inline-end: 0.5rem;
-    color: var(--muted);
-  }
 
   .hero-copy h1 {
     font-size: clamp(2.2rem, 10.5vw, 3rem);
@@ -1616,8 +1566,13 @@ html[dir="rtl"] .footer-copy h3 {
   margin: 0.5rem 0 1rem;
 }
 
+main:focus {
+  outline: none;
+}
+
 .service-page {
-  padding: 2rem 0 3rem;
+  /* Block padding only: keep the .container side gutter on mobile/tablet. */
+  padding-block: 2rem 3rem;
   max-width: 760px;
 }
 

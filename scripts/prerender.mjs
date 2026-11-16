@@ -57,6 +57,33 @@ function setByAttr(html, attrName, attrValue, target, value) {
   return html;
 }
 
+const IMAGE_ALT = {
+  en: 'Mahmoud Hawa — IT Management as a Service',
+  ar: 'محمود حوا — إدارة تقنية المعلومات كخدمة',
+};
+
+// og:type, og:locale(+alternate) and the share-image alt text per language.
+function setSocialMeta(html, lang, type) {
+  const isAr = lang === 'ar';
+  html = html.replace(/(<meta property="og:type" content=")[^"]*(")/, `$1${type}$2`);
+  html = html.replace(/(<meta property="og:locale:alternate" content=")[^"]*(")/, `$1${isAr ? 'en_US' : 'ar_SA'}$2`);
+  html = html.replace(/(<meta property="og:image:alt" content=")[^"]*(")/, `$1${esc(IMAGE_ALT[lang])}$2`);
+  html = html.replace(/(<meta name="twitter:image:alt" content=")[^"]*(")/, `$1${esc(IMAGE_ALT[lang])}$2`);
+  return html;
+}
+
+// Static UI labels (skip link, nav, brand, theme/menu buttons) in the page
+// language, so no-JS clients and screen readers get the right language.
+function setChromeLabels(html, lang, name) {
+  html = html.replace(/(<a class="skip-link"[^>]*>)[^<]*(<\/a>)/, `$1${esc(t('controls.skip', lang))}$2`);
+  html = html.replace(/(<nav class="nav container" aria-label=")[^"]*(")/, `$1${esc(t('controls.primaryNav', lang))}$2`);
+  html = html.replace(/(<span class="sr-only" id="nav-brand-name">)[^<]*(<\/span>)/, `$1${esc(name || '')}$2`);
+  html = html.replace(/(<button id="theme-toggle"[^>]*aria-label=")[^"]*(")/, `$1${esc(t('controls.themeToLight', lang))}$2`);
+  html = html.replace(/(<button\s+id="nav-toggle"[\s\S]*?aria-label=")[^"]*(")/, `$1${esc(t('controls.menuOpen', lang))}$2`);
+  html = html.replace(/(<button id="back-to-top"[^>]*aria-label=")[^"]*(")/, `$1${esc(t('controls.backToTop', lang))}$2`);
+  return html;
+}
+
 function fill(shell, lang) {
   const file = lang === 'ar' ? 'ar/content.md' : 'content.md';
   const { meta, sections } = parseContent(read(file));
@@ -83,6 +110,7 @@ function fill(shell, lang) {
   html = setByAttr(html, 'rel', 'canonical', 'href', canonical);
   html = setByAttr(html, 'property', 'og:url', 'content', canonical);
   html = setByAttr(html, 'property', 'og:locale', 'content', lang === 'ar' ? 'ar_SA' : 'en_US');
+  html = setSocialMeta(html, lang, 'website');
   const back = t('controls.backToTop', lang);
   html = html.replace(/(<button id="back-to-top"[^>]*aria-label=")[^"]*(")/, `$1${esc(back)}$2`);
   html = html.replace(/(<a class="skip-link"[^>]*>)[^<]*(<\/a>)/, `$1${esc(t('controls.skip', lang))}$2`);
@@ -306,6 +334,8 @@ function buildServicePage(slug, lang) {
   html = setByAttr(html, 'rel', 'canonical', 'href', canonical);
   html = setByAttr(html, 'property', 'og:url', 'content', canonical);
   html = setByAttr(html, 'property', 'og:locale', 'content', isAr ? 'ar_SA' : 'en_US');
+  html = setSocialMeta(html, lang, 'article');
+  html = setChromeLabels(html, lang, homeContent.meta.name);
   html = html.replace(
     /<link rel="alternate" hreflang="en" href="[^"]*" \/>/,
     `<link rel="alternate" hreflang="en" href="${SITE}${enPath}" />`
@@ -319,7 +349,9 @@ function buildServicePage(slug, lang) {
     `<link rel="alternate" hreflang="x-default" href="${SITE}${enPath}" />`
   );
   html = prefixRelative(html, prefix);
-  html = html.replace(/href="#([^"]*)"/g, `href="${home}#$1"`);
+  // Nav links point back to the home-page sections, but the skip link must
+  // stay on this page (WCAG 2.4.1).
+  html = html.replace(/href="#([^"]*)"/g, (full, id) => (id === 'main' ? full : `href="${home}#${id}"`));
   const toggle = isAr
     ? `<a id="lang-toggle" class="control-btn" href="../../../services/${slug}/" hreflang="en" lang="en" aria-label="EN – Switch language to English">EN</a>`
     : `<a id="lang-toggle" class="control-btn" href="../../ar/services/${slug}/" hreflang="ar" lang="ar" aria-label="AR – Switch language to Arabic">AR</a>`;
