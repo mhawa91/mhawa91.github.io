@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <!--
+      Content-Security-Policy: only this site's own scripts, styles, images,
+      fonts and content files may load. Inline scripts and inline styles are
+      blocked on purpose — keep JS in files and styling in assets/css/styles.css.
+      form-action 'none' blocks form posts. Ordinary links are not form posts,
+      so a Google Calendar appointment link (calendar.app.google) can be
+      navigated to. Do not add a navigate-to restriction.
+      (frame-ancestors / X-Frame-Options need a real HTTP header, which GitHub
+      Pages cannot send.)
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'sha256-oworzUUvioU91wCBalA/MW+UxB9Vljs/miwVRfqhw3k=' 'sha256-AKsuqhLEMKfiaS1Lau/+oQVN2lGxoJNoQDmq0O6lcUQ='; style-src 'self'; font-src 'self'; img-src 'self' data:; manifest-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta id="meta-theme-color" name="theme-color" content="#0b1020" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mh-content" content="content.md" />
+    <meta name="mh-asset-prefix" content="../" />
+    <script src="../assets/js/boot.js"></script>
+    <meta
+      id="meta-description"
+      name="description"
+      content="محمود حوا: إدارة تقنية المعلومات كخدمة للشركات في السعودية. قرارات تقنية، أنظمة ERP، حوكمة وذكاء اصطناعي. احجز مكالمة تعارف."
+    />
+    <meta id="og-title" property="og:title" content="محمود حوا | إدارة تقنية المعلومات كخدمة" />
+    <meta
+      id="og-description"
+      property="og:description"
+      content="قيادة تقنية لشركتك بدون تعيين مدير تقنية بدوام كامل: استراتيجية، أنظمة ERP، موردون، حوكمة وذكاء اصطناعي."
+    />
+    <meta id="og-image" property="og:image" content="https://mahmoudhawa.com/media/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="محمود حوا — إدارة تقنية المعلومات كخدمة" />
+    <meta property="og:url" content="https://mahmoudhawa.com/ar/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="Mahmoud Hawa" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta id="twitter-title" name="twitter:title" content="محمود حوا | إدارة تقنية المعلومات كخدمة" />
+    <meta
+      id="twitter-description"
+      name="twitter:description"
+      content="قيادة تقنية لشركتك بدون تعيين مدير تقنية بدوام كامل: استراتيجية، أنظمة ERP، موردون، حوكمة وذكاء اصطناعي."
+    />
+    <meta id="twitter-image" name="twitter:image" content="https://mahmoudhawa.com/media/og-cover.png" />
+    <meta name="twitter:image:alt" content="محمود حوا — إدارة تقنية المعلومات كخدمة" />
+    <link rel="canonical" href="https://mahmoudhawa.com/ar/" />
+    <link rel="alternate" hreflang="en" href="https://mahmoudhawa.com/" />
+    <link rel="alternate" hreflang="ar" href="https://mahmoudhawa.com/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://mahmoudhawa.com/" />
+    <title>محمود حوا | إدارة تقنية المعلومات كخدمة للشركات المتوسطة في الرياض</title>
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://mahmoudhawa.com/#person",
+      "name": "محمود حوا",
+      "alternateName": "Mahmoud Hawa",
+      "jobTitle": "IT Management & Enterprise Applications Consultant",
+      "description": "Mahmoud Hawa | IT management as a service for mid-size companies in Riyadh: ERP, vendor selection, delivery, and technology and AI governance.",
+      "url": "https://mahmoudhawa.com/",
+      "image": "https://mahmoudhawa.com/media/photo-800.webp",
+      "email": "mailto:info@mahmoudhawa.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressCountry": "SA"
+      },
+      "knowsLanguage": ["ar", "en"],
+      "knowsAbout": [
+        "IT management",
+        "ERP",
+        "SAP S/4HANA",
+        "SAP Business One",
+        "Oracle Fusion",
+        "Microsoft Dynamics GP",
+        "IT governance",
+        "Vendor selection",
+        "RFP",
+        "Project delivery",
+        "Digital transformation",
+        "Business analysis",
+        "AI governance",
+        "ZATCA e-invoicing",
+        "Master data governance"
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Midocean University" },
+        { "@type": "CollegeOrUniversity", "name": "Zaytoonah Private University" }
+      ],
+      "sameAs": ["https://www.linkedin.com/in/hawamahmoud"]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://mahmoudhawa.com/#service",
+      "name": "محمود حوا — إدارة تقنية المعلومات كخدمة",
+      "alternateName": "Mahmoud Hawa — IT Management as a Service",
+      "url": "https://mahmoudhawa.com/",
+      "image": "https://mahmoudhawa.com/media/og-cover.png",
+      "provider": { "@id": "https://mahmoudhawa.com/#person" },
+      "serviceType": [
+        "إدارة تقنية المعلومات كخدمة",
+        "IT management as a service",
+        "ERP and enterprise applications advisory",
+        "Vendor selection and RFP",
+        "IT governance",
+        "AI adoption and governance"
+      ],
+      "areaServed": [
+        { "@type": "Country", "name": "Saudi Arabia" },
+        { "@type": "Country", "name": "United Arab Emirates" },
+        { "@type": "Country", "name": "Kuwait" },
+        { "@type": "Country", "name": "Qatar" },
+        { "@type": "Country", "name": "Bahrain" },
+        { "@type": "Country", "name": "Oman" }
+      ],
+      "availableLanguage": ["Arabic", "English"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "info@mahmoudhawa.com",
+        "url": "https://calendar.app.google/v999A6aR7XRWAp5B9",
+        "availableLanguage": ["Arabic", "English"]
+      }
+    }
+  ]
+}
+    </script>
+    <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما هي إدارة تقنية المعلومات كخدمة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "إدارة تقنية المعلومات كخدمة هي أن يتولى شخص من خارج الشركة القرار التقني: تحديد الاحتياج، واختيار الأنظمة والموردين، وإدارة المشاريع، ووضع الحوكمة، باتفاق واضح، بدلاً من تعيين مدير تقنية معلومات بدوام كامل. وهي تختلف عن الدعم الفني المُدار الذي يركز على تشغيل الأجهزة والشبكات وإصلاح الأعطال."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما الفرق بين هذه الخدمة والدعم الفني المُدار؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "الدعم الفني المُدار يجيب عن سؤال «من يصلح العطل؟». إدارة تقنية المعلومات كخدمة تجيب عن سؤال «ما القرار التقني الصحيح، ومن يتابع تنفيذه؟». كثير من الشركات تحتاج الاثنين، ويمكن أن يعملا معاً."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هي البيانات الأساسية، ولماذا تهم بعد إطلاق ERP؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "البيانات الأساسية هي السجلات المرجعية التي تعتمد عليها العمليات: العملاء والموردون والأصناف والحسابات. إذا لم يكن لكل نوع منها مالك واضح من الإدارات، تتكرر السجلات وتختلف التقارير بعد الإطلاق، مهما كان النظام جيداً."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "لمن تناسب هذه الخدمة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "للشركات المتوسطة في السعودية ودول الخليج التي تتخذ قراراً تقنياً مهماً، مثل نظام ERP جديد أو مورد جديد أو مشروع رقمنة، وليس فيها قيادة تقنية داخلية، أو فيها فريق تقني يحتاج توجيهاً."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "متى لا تناسبك؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "إذا كان حجم العمل التقني اليومي يحتاج مديراً متفرغاً داخل الشركة. في هذه الحالة أقول ذلك بوضوح، وأساعد في وصف الدور إذا أردت التعيين. ولا تناسبك إذا كنت تحتاج إصلاح الأجهزة والشبكات فقط. ذلك دعم فني مُدار."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف نبدأ؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "بمكالمة تعارف مجانية مدتها 30 دقيقة. نفهم فيها وضع الشركة والقرار المطروح. بعدها أرسل ملخصاً مكتوباً بالخطوة الأولى المقترحة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما الأنظمة التي عملت عليها؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SAP S/4HANA وSAP Business One، وMicrosoft Dynamics GP، وتكامل Oracle Fusion، وأنظمة الموارد البشرية والمبيعات الميدانية، وPower BI وPower Apps، وربط الفوترة الإلكترونية (ZATCA). التفاصيل في الخبرات."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تساعد في مشروع ERP متعثر؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم. نبدأ بمراجعة النطاق والبيانات والحوكمة، ثم نضع خطة واضحة لما يُكمل وما يُعدّل."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تساعد في سياسة استخدام الذكاء الاصطناعي؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم. تبدأ الخدمة بثلاث خطوات: حصر الاستخدام الحالي، وتصنيف البيانات المسموح إدخالها، وكتابة سياسة من صفحة واحدة. وذلك بما يتوافق مع المرجعيات الوطنية، مثل مبادئ أخلاقيات الذكاء الاصطناعي من سدايا ونظام حماية البيانات الشخصية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "أين تعمل؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "أنا في الرياض. أعمل مع شركات في السعودية ودول الخليج."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "أربع خطوات، من المكالمة الأولى إلى المتابعة",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "مكالمة تعارف",
+        "text": "نفهم وضع الشركة والقرار المطروح، ونتأكد أن الخدمة مناسبة. المكالمة مجانية ومدتها 30 دقيقة."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "تقييم",
+        "text": "أراجع الأنظمة والإجراءات والموردين الحاليين، وأحدد الفجوات والأولويات."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "خطة مكتوبة",
+        "text": "توصيات مرتبة حسب الأولوية، مع المسؤوليات والنطاق والمخاطر."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "تنفيذ ومتابعة",
+        "text": "أتابع الموردين والمشاريع، وأقدم تقريراً دورياً للإدارة، بما في ذلك ما بعد الإطلاق."
+      }
+    ]
+  }
+]
+</script>
+    <link rel="preload" href="../assets/fonts/tajawal-arabic-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../assets/fonts/tajawal-arabic-700.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="القائمة الرئيسية">
+        <a href="#home" class="brand" id="nav-brand">
+          <svg class="brand-logo" viewBox="0 0 40 40" aria-hidden="true">
+            <defs>
+              <linearGradient id="brandGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0" class="brand-logo-stop-1" />
+                <stop offset="1" class="brand-logo-stop-2" />
+              </linearGradient>
+            </defs>
+            <rect x="0.5" y="0.5" width="39" height="39" rx="11" fill="url(#brandGrad)" />
+            <text x="20" y="26" text-anchor="middle" class="brand-logo-text">MH</text>
+          </svg>
+          <span class="sr-only" id="nav-brand-name">محمود حوا</span>
+        </a>
+        <div class="nav-right">
+          <div class="nav-links" id="nav-links">
+            <a href="#about">نبذة</a>
+            <a href="#how-we-work">كيف نعمل</a>
+            <a href="#services">الخدمات</a>
+            <a href="#experience">الخبرات</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+            <a href="#contact">تواصل</a>
+          </div>
+          <div class="nav-controls">
+            <a id="lang-toggle" class="control-btn" href="../" hreflang="en" lang="en" aria-label="EN – Switch language to English">EN</a>
+            <button id="theme-toggle" class="control-btn" type="button" aria-label="التبديل إلى الوضع الفاتح">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2" />
+                <path d="M12 2.5v3M12 18.5v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2.5 12h3M18.5 12h3M4.9 19.1l2.1-2.1M17 7l2.1-2.1" />
+              </svg>
+            </button>
+            <button
+              id="nav-toggle"
+              class="control-btn nav-toggle"
+              type="button"
+              aria-label="فتح القائمة"
+              aria-expanded="false"
+              aria-controls="nav-links"
+            >
+              <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section id="home" class="hero">
+        <div class="container hero-inner" id="hero-mount">
+    <div class="hero-visual">
+      <div class="profile-card">
+        <picture><source type="image/webp" srcset="../media/photo-420.webp 420w, ../media/photo-800.webp 800w" sizes="(max-width: 860px) 148px, 312px" /><img src="../media/Personal%20Photo.jpg" alt="محمود حوا" class="profile-photo" width="420" height="420" decoding="async" fetchpriority="high" /></picture>
+      </div>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">محمود حوا · الرياض</p>
+      <h1 class="service-title">إدارة تقنية المعلومات كخدمة، قبل أن تتسع المشكلة</h1>
+      
+      <ul class="focus-chips"><li>الأنظمة وERP</li><li>الموردون والعقود</li><li>المشاريع والتسليم</li><li>حوكمة التقنية والذكاء الاصطناعي</li></ul>
+      <p class="hero-intro">أنا محمود حوا، خبرتي أكثر من 12 سنة في إدارة أنظمة المؤسسات والتحول الرقمي في السعودية. أتولى القرار التقني معك: من تقييم الاحتياج، إلى اختيار المورد، إلى إدارة المشروع، ثم ما بعد الإطلاق. هذه قيادة وحوكمة، وليست دعماً فنياً للأجهزة والشبكات.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://calendar.app.google/v999A6aR7XRWAp5B9" target="_blank" rel="noopener">احجز مكالمة تعارف مجانية (30 دقيقة)</a>
+        <a class="button secondary" href="#how-we-work">كيف نعمل</a>
+        <a class="button secondary" href="../media/Mahmoud%20Hawa%20CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7.5 11l4.5 4.5 4.5-4.5M5 19.5h14"/></svg><span>تحميل السيرة الذاتية</span></a>
+      </div>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/hawamahmoud" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.6a2.4 2.4 0 0 1 4.8 0V17M12 10.5V17"/></svg><span>لينكدإن</span></a></li>
+        <li><a href="mailto:info@mahmoudhawa.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg><span>البريد الإلكتروني</span></a></li>
+      </ul>
+    </div>
+  </div>
+      </section>
+
+      <section class="section stats-section" aria-label="أرقام رئيسية">
+        <div class="container" id="stats-mount"><div class="stats-grid"><div class="stat-tile"><strong>12+</strong><span>سنة في إدارة أنظمة المؤسسات</span></div><div class="stat-tile"><strong>15+</strong><span>مشروعاً وتطبيقاً مؤسسياً</span></div><div class="stat-tile"><strong>2</strong><span>مشروعا فوترة إلكترونية (ZATCA) أُطلقا قبل الموعد</span></div><div class="stat-tile"><strong>2,500</strong><span>موظف تقريباً على نظام موارد بشرية مؤسسي</span></div></div></div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container" id="about-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">نبذة عني</p>
+      <h2>قرارك التقني، مع شخص تحمّل مسؤوليته داخل الشركات</h2>
+    </div>
+    <div class="about-grid"><p>أنا محمود حوا. أعمل مع الشركات المتوسطة في السعودية ودول الخليج على القرارات التقنية التي يصعب تصحيحها لاحقاً: أي نظام، وأي مورد، وكيف يُدار المشروع، وكيف تُضبط حوكمته بعد الإطلاق.</p><p>خبرتي أكثر من 12 سنة في أنظمة المؤسسات والتحول الرقمي في المقاولات والسلع الاستهلاكية والتوزيع، ومنها SAP وOracle وMicrosoft Dynamics، واختيار الموردين، وإدارة المشاريع، وحوكمة البيانات والذكاء الاصطناعي. أشغل حالياً منصب مدير تطبيقات الأعمال وذكاء الأعمال في AL-AYUNI Investment &amp; Contracting Company (AICC).</p></div>
+    <ul class="skill-grid"><li>اختيار أنظمة ERP وتكاملها</li><li>اختيار الموردين وكراسات الشروط</li><li>إدارة المشاريع والتسليم</li><li>حوكمة التقنية واتفاقيات الخدمة</li><li>البيانات الأساسية وحوكمة البيانات</li><li>تبني الذكاء الاصطناعي وحوكمته</li><li>تصميم الإجراء قبل النظام</li><li>الأداء والبيانات (مؤشرات وPower BI)</li></ul>
+  </div>
+      </section>
+
+      <section id="how-we-work" class="section alt">
+        <div class="container" id="how-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">كيف نعمل</p>
+      <h2>أربع خطوات، من المكالمة الأولى إلى المتابعة</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <h3>مكالمة تعارف</h3>
+        <p>نفهم وضع الشركة والقرار المطروح، ونتأكد أن الخدمة مناسبة. المكالمة مجانية ومدتها 30 دقيقة.</p>
+      </li>
+      <li>
+        <h3>تقييم</h3>
+        <p>أراجع الأنظمة والإجراءات والموردين الحاليين، وأحدد الفجوات والأولويات.</p>
+      </li>
+      <li>
+        <h3>خطة مكتوبة</h3>
+        <p>توصيات مرتبة حسب الأولوية، مع المسؤوليات والنطاق والمخاطر.</p>
+      </li>
+      <li>
+        <h3>تنفيذ ومتابعة</h3>
+        <p>أتابع الموردين والمشاريع، وأقدم تقريراً دورياً للإدارة، بما في ذلك ما بعد الإطلاق.</p>
+      </li></ol></div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container" id="services-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">الخدمات</p>
+      <h2>أربعة محاور، والأداء والبيانات عند الحاجة</h2>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 5-5 2 2-5z"/></svg></span>
+        <div class="service-body">
+          <h3>القرار التقني والاستراتيجية</h3>
+          <p>صورة مكتوبة للأولويات: ماذا نبدأ الآن، وماذا نؤجل، وكيف يخدم الإنفاق التقني أهداف العمل. المخرج خطة مرتبة حسب الأولوية.</p>
+          
+        </div>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15L15 9M8 4h4v4M20 8v4h-4M4 16v4h4M16 20h4v-4"/></svg></span>
+        <div class="service-body">
+          <h3>الأنظمة وERP</h3>
+          <p>اختيار أنظمة ERP وتطبيقات المؤسسات والإشراف عليها وحوكمتها، بما في ذلك البيانات الأساسية والمشروع المتعثر. المخرج مقارنة وتوصية مبررة.</p>
+          <p class="service-links"><a class="text-link" href="services/erp-enterprise-apps/">اقرأ المزيد عن الأنظمة وERP</a></p>
+        </div>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h11M4 12h16M4 18h9"/><circle cx="19" cy="6" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+        <div class="service-body">
+          <h3>اختيار الموردين وكراسات الشروط</h3>
+          <p>المتطلبات، ومقارنة العروض، والمساندة في التفاوض واتفاقيات مستوى الخدمة. المخرج وثيقة متطلبات وجدول تقييم.</p>
+          <p class="service-links"><a class="text-link" href="services/vendor-selection-rfp/">اقرأ المزيد عن اختيار الموردين وكراسات الشروط</a></p>
+        </div>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <div class="service-body">
+          <h3>تبني الذكاء الاصطناعي وحوكمته</h3>
+          <p>أين تُستخدم الأدوات اليوم، وأي بيانات يُسمح بإدخالها، وسياسة استخدام من صفحة واحدة. المخرج السياسة وخطة تطبيق.</p>
+          <p class="service-links"><a class="text-link" href="services/ai-adoption-governance/">اقرأ المزيد عن تبني الذكاء الاصطناعي وحوكمته</a></p>
+        </div>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V10M10 19V5M16 19v-7M4 19h16"/></svg></span>
+        <div class="service-body">
+          <h3>الأداء والبيانات</h3>
+          <p>مؤشرات الأداء والتقارير، ومنها Power BI، كخدمة مساندة تحت الإدارة التقنية الأوسع. ليست العرض كله.</p>
+          
+        </div>
+      </article></div>
+    <div class="services-cta"><a class="button primary" href="https://calendar.app.google/v999A6aR7XRWAp5B9" target="_blank" rel="noopener">احجز مكالمة تعارف مجانية (30 دقيقة)</a></div>
+  </div>
+      </section>
+
+      <section id="experience" class="section alt">
+        <div class="container" id="experience-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">الخبرة العملية</p>
+      <h2>أبرز محطات المسيرة المهنية</h2>
+    </div>
+    <div class="timeline">
+      <article class="timeline-item">
+        <span class="year">أكتوبر 2024 — حتى الآن</span>
+        <div class="timeline-body">
+          <h3>مدير تطبيقات الأعمال وذكاء الأعمال</h3>
+          <p class="company">AL-AYUNI Investment &amp; Contracting Company (AICC)</p>
+          <p class="company-note">مجموعة سعودية رائدة في المقاولات والاستثمار</p>
+          <ul class="highlights"><li>حوكمة محفظة تطبيقات مؤسسية تشمل أنظمة ERP، وإدارة الأداء المؤسسي، والأسطول، واللوجستيات، وإدارة العمليات (BPM)، والتحليلات، وإدارة المشاريع، ومنصات تشغيلية مخصصة؛ مع إرساء ملكية الأنظمة وحوكمة اتفاقيات مستوى الخدمة وضوابط دورة حياة التطبيقات.</li><li>إدخال ممارسات إدارة محفظة التطبيقات، بما يشمل معايير تقييم التطبيقات، ونماذج ترتيب أولويات الاستثمار، ومعايير الحوكمة، وخارطة طريق تقنية متوافقة مع الاستراتيجية المؤسسية لـ AICC.</li><li>قيادة دورات طلبات العروض والمشتريات التقنية من البداية إلى النهاية (المتطلبات، وتقييم الحلول، وتقييم الموردين، والتقييم الفني والتجاري، والتفاوض على العقود)، بما يدعم قرارات استثمارية مبنية على إدارة المخاطر.</li><li class="extra">تصميم وتنفيذ إطار XCore لإدارة الأداء المؤسسي على منصة KIPPY، بتطبيق مبادئ بطاقة الأداء المتوازن لترجمة الأهداف المؤسسية إلى مؤشرات أداء قابلة للقياس عبر وحدات الأعمال.</li><li class="extra">تنفيذ PxM كمنصة لإدارة إجراءات الأعمال، مع رقمنة سير العمل بين الإدارات، وإرساء ملكية العمليات، والانتقال إلى بيئة تشغيل أكثر ضبطاً وخالية من الأوراق.</li><li class="extra">تصميم مسارات مؤتمتة لتكامل البيانات بين Oracle Fusion وAfaqi وSaudiX وPxM وPrimavera P6 بضوابط ETL وتحقق وحوكمة، مما حسّن جودة البيانات وقلّص دورات إعداد التقارير.</li><li class="extra">تطبيق حلول Power Apps ولوحات معلومات تنفيذية عبر Power BI للتقارير المؤتمتة ومتابعة الأداء ذاتية الخدمة، مما قلّل جهد التقارير اليدوية الأسبوعية.</li><li class="extra">إدخال أدوات الذكاء الاصطناعي التوليدي (ChatGPT وClaude وMicrosoft Copilot وManus) في سير عمل تطبيقات الأعمال وذكاء الأعمال، مما سرّع تحليل البيانات وإعداد التقارير الإدارية وأتمتة العمليات وتحضير العروض التنفيذية.</li><li class="extra">قيادة مبادرات تحديث تقنية المعلومات، وترشيد التطبيقات، وحوكمة البيانات، والامتثال لمتطلبات التدقيق، مع تنسيق عمل عدة موردين تقنيين والحفاظ على استمرارية الأعمال.</li></ul>
+          <button class="more-toggle" type="button" aria-expanded="false">
+             <span class="more-label">عرض المزيد (6)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+           </button>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <span class="year">نوفمبر 2018 — أكتوبر 2024</span>
+        <div class="timeline-body">
+          <h3>رئيس قسم ذكاء الأعمال</h3>
+          <p class="company">Unicharm Gulf Hygienic Industries</p>
+          <p class="company-note">شركة عالمية رائدة في السلع الاستهلاكية (مقرها الرئيسي اليابان)</p>
+          <ul class="highlights"><li>تأسيس ذكاء الأعمال كوظيفة مؤسسية لدعم القرار، وقيادة فريق من أربعة أعضاء، وتنفيذ خارطة طريق استراتيجية للتحليلات عبر SAP Business One وSalesBuzz BI وPower BI. بناء مكتبة مؤسسية لمؤشرات الأداء ومجموعة لوحات معلومات عبر Power BI وSQL حسّنت موثوقية البيانات في خمس وظائف أعمال، وحققت 95% التزاماً بمواعيد تسليم التقارير، ودعمت ترشيد التكاليف.</li><li>تنفيذ SalesBuzz SFA لأكثر من 100 موظف مبيعات عبر 14 فرعاً وMenaItech HR لنحو 2,500 موظف، من تحديد المتطلبات وترحيل البيانات حتى تهيئة المستخدمين وتدريبهم. تكامل النظامين مع SAP Business One لرقمنة عمليات المبيعات الميدانية والموارد البشرية وتحسين تقارير الامتثال في الموارد البشرية.</li><li>تصميم وتطبيق وأتمتة عمليات SAP Business One في المشتريات والمبيعات والمالية والإنتاج. تعزيز حوكمة البيانات الرئيسية عبر معايير إدخال البيانات، وضوابط التحقق على مستوى الحقول، وتحديد مالك للبيانات في كل إدارة.</li><li class="extra">قيادة تنفيذين للامتثال للفوترة الإلكترونية ZATCA/FATOORAH (SAP Business One مع ClearTax؛ وSalesBuzz SFA مع SalesBuzz E-Invoice)، وتحقيق الجاهزية التنظيمية الكاملة قبل مواعيد الإلزام.</li><li class="extra">قيادة مشتريات التطبيقات المؤسسية ودورات طلبات العروض لـ SAP S/4HANA وSalesBuzz BI وShelves لإدارة العرض في المتاجر، شاملةً المتطلبات، وتقييم الموردين، والتفاوض التجاري، وتحسين التراخيص، والتخطيط للتنفيذ على مراحل. تنفيذ Shelves متكاملاً مع SAP Business One، مما وحّد بيانات المبيعات الميدانية وقلّل المطابقة اليدوية.</li><li class="extra">أتمتة عمليات إعداد البيانات والتقارير المتكررة، مما قلّص وقت المعالجة الأسبوعي بشكل كبير. تعزيز تبنّي الأنظمة عبر الاختبار المنظم، وتدريب المستخدمين، والتوثيق، وتصميم لوحات معلومات تتمحور حول المستخدم، والدعم بعد التنفيذ.</li></ul>
+          <button class="more-toggle" type="button" aria-expanded="false">
+             <span class="more-label">عرض المزيد (3)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+           </button>
+        </div>
+      </article>
+      <article class="timeline-item">
+        <span class="year">نوفمبر 2014 — نوفمبر 2018</span>
+        <div class="timeline-body">
+          <h3>أخصائي تطبيقات أول</h3>
+          <p class="company">Arrow Food Company</p>
+          <p class="company-note">من أبرز موزعي المنتجات الغذائية وغير الغذائية الفاخرة في المملكة</p>
+          <ul class="highlights"><li>تنفيذ SalesBuzz SFA في بيئتي Microsoft Dynamics GP وSAP S/4HANA، مع أتمتة تنفيذ المبيعات وتعزيز وضوح الأداء عبر أربعة فروع.</li><li>تصميم وتنفيذ تكاملات تربط SalesBuzz SFA مع Microsoft Dynamics GP وSAP S/4HANA، مما قلّل تشتت البيانات ووحّد رؤية المبيعات والتوزيع.</li><li>تطوير تقارير SAP S/4HANA مخصصة باستخدام ABAP إلى جانب تقارير إدارية ولوحات معلومات، مما حسّن وضوح عمليات المبيعات والمخزون والتوزيع.</li></ul>
+          
+        </div>
+      </article></div>
+  </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container" id="achievements-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">الإنجازات</p>
+      <h2>مبادرات مختارة</h2>
+    </div>
+    <div class="card-grid">
+      <article class="project-card">
+        <span class="tag">المحفظة</span>
+        <h3>حوكمة محفظة التطبيقات</h3>
+        <p>إدخال إدارة محفظة التطبيقات: معايير تقييم، وأولويات استثمار، ومعايير حوكمة، وخارطة طريق تشمل ERP والعمليات والأسطول واللوجستيات والمشاريع والتحليلات.</p>
+      </article>
+      <article class="project-card">
+        <span class="tag">الأداء</span>
+        <h3>إطار الأداء المؤسسي</h3>
+        <p>تصميم وتنفيذ إطار XCore للأداء المؤسسي على منصة KIPPY، لترجمة أهداف الشركة إلى مؤشرات قابلة للقياس.</p>
+      </article>
+      <article class="project-card">
+        <span class="tag">الإجراءات</span>
+        <h3>منصة إجراءات العمل</h3>
+        <p>تنفيذ PxM كمنصة للإجراءات، مع رقمنة سير العمل عبر الإدارات وتحديد مالك لكل إجراء.</p>
+      </article>
+      <article class="project-card">
+        <span class="tag">الامتثال</span>
+        <h3>الفوترة الإلكترونية</h3>
+        <p>قيادة إطلاقين للفوترة الإلكترونية، أحدهما على نظام ERP والآخر على نظام المبيعات الميدانية، وكلاهما جاهز قبل موعد الإلزام.</p>
+      </article>
+      <article class="project-card">
+        <span class="tag">التطبيق</span>
+        <h3>المبيعات الميدانية والموارد البشرية</h3>
+        <p>تطبيق نظام للمبيعات الميدانية لأكثر من 100 موظف في 14 فرعاً، ونظام موارد بشرية لنحو 2,500 موظف، والاثنان مربوطان بنظام ERP.</p>
+      </article>
+      <article class="project-card">
+        <span class="tag">تبني الذكاء الاصطناعي</span>
+        <h3>الذكاء الاصطناعي في العمل اليومي</h3>
+        <p>إدخال أدوات الذكاء الاصطناعي التوليدي في عمل التطبيقات والتقارير، مع حوكمة لطريقة استخدامها.</p>
+      </article></div>
+  </div>
+      </section>
+
+      <section id="definition" class="section alt">
+        <div class="container" id="definition-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">تعريف</p>
+      <h2>ماذا تعني إدارة تقنية المعلومات كخدمة</h2>
+    </div>
+    <div class="definition-list">
+      <article class="definition">
+        <h3>ما هي إدارة تقنية المعلومات كخدمة؟</h3>
+        <p>إدارة تقنية المعلومات كخدمة هي أن يتولى شخص من خارج الشركة القرار التقني: تحديد الاحتياج، واختيار الأنظمة والموردين، وإدارة المشاريع، ووضع الحوكمة، باتفاق واضح، بدلاً من تعيين مدير تقنية معلومات بدوام كامل. وهي تختلف عن الدعم الفني المُدار الذي يركز على تشغيل الأجهزة والشبكات وإصلاح الأعطال.</p>
+      </article>
+      <article class="definition">
+        <h3>ما الفرق بين هذه الخدمة والدعم الفني المُدار؟</h3>
+        <p>الدعم الفني المُدار يجيب عن سؤال «من يصلح العطل؟». إدارة تقنية المعلومات كخدمة تجيب عن سؤال «ما القرار التقني الصحيح، ومن يتابع تنفيذه؟». كثير من الشركات تحتاج الاثنين، ويمكن أن يعملا معاً.</p>
+      </article>
+      <article class="definition">
+        <h3>ما هي البيانات الأساسية، ولماذا تهم بعد إطلاق ERP؟</h3>
+        <p>البيانات الأساسية هي السجلات المرجعية التي تعتمد عليها العمليات: العملاء والموردون والأصناف والحسابات. إذا لم يكن لكل نوع منها مالك واضح من الإدارات، تتكرر السجلات وتختلف التقارير بعد الإطلاق، مهما كان النظام جيداً.</p>
+      </article></div></div>
+      </section>
+
+      <section id="faq" class="section">
+        <div class="container" id="faq-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">أسئلة شائعة</p>
+      <h2>أسئلة قبل المكالمة الأولى</h2>
+    </div>
+    <div class="faq-list"><article class="faq-item"><h3>لمن تناسب هذه الخدمة؟</h3><p>للشركات المتوسطة في السعودية ودول الخليج التي تتخذ قراراً تقنياً مهماً، مثل نظام ERP جديد أو مورد جديد أو مشروع رقمنة، وليس فيها قيادة تقنية داخلية، أو فيها فريق تقني يحتاج توجيهاً.</p></article><article class="faq-item"><h3>متى لا تناسبك؟</h3><p>إذا كان حجم العمل التقني اليومي يحتاج مديراً متفرغاً داخل الشركة. في هذه الحالة أقول ذلك بوضوح، وأساعد في وصف الدور إذا أردت التعيين. ولا تناسبك إذا كنت تحتاج إصلاح الأجهزة والشبكات فقط. ذلك دعم فني مُدار.</p></article><article class="faq-item"><h3>كيف نبدأ؟</h3><p>بمكالمة تعارف مجانية مدتها 30 دقيقة. نفهم فيها وضع الشركة والقرار المطروح. بعدها أرسل ملخصاً مكتوباً بالخطوة الأولى المقترحة.</p></article><article class="faq-item"><h3>ما الأنظمة التي عملت عليها؟</h3><p>SAP S/4HANA وSAP Business One، وMicrosoft Dynamics GP، وتكامل Oracle Fusion، وأنظمة الموارد البشرية والمبيعات الميدانية، وPower BI وPower Apps، وربط الفوترة الإلكترونية (ZATCA). التفاصيل في الخبرات.</p></article><article class="faq-item"><h3>هل تساعد في مشروع ERP متعثر؟</h3><p>نعم. نبدأ بمراجعة النطاق والبيانات والحوكمة، ثم نضع خطة واضحة لما يُكمل وما يُعدّل.</p></article><article class="faq-item"><h3>هل تساعد في سياسة استخدام الذكاء الاصطناعي؟</h3><p>نعم. تبدأ الخدمة بثلاث خطوات: حصر الاستخدام الحالي، وتصنيف البيانات المسموح إدخالها، وكتابة سياسة من صفحة واحدة. وذلك بما يتوافق مع المرجعيات الوطنية، مثل مبادئ أخلاقيات الذكاء الاصطناعي من سدايا ونظام حماية البيانات الشخصية.</p></article><article class="faq-item"><h3>أين تعمل؟</h3><p>أنا في الرياض. أعمل مع شركات في السعودية ودول الخليج.</p></article></div></div>
+      </section>
+
+      <section id="entrepreneurship" class="section alt">
+        <div class="container" id="entrepreneurship-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">المشاريع والاستثمار</p>
+      <h2>ما وراء العمل المؤسسي — النشاط الريادي والاستثماري</h2>
+    </div>
+    <div class="services-grid entrepreneurship-grid">
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2.5 2 4 5 4 8.5 0 1.8-.5 3.3-1.2 4.5H9.2C8.5 13.8 8 12.3 8 10.5 8 7 9.5 4 12 2z"/><circle cx="12" cy="9" r="1.6"/><path d="M8.5 15.5L6 20l3.5-1.3M15.5 15.5L18 20l-3.5-1.3"/></svg></span>
+        <div class="service-body">
+          <h3>المؤسس والرئيس التنفيذي — Logistic Link</h3>
+          <p>أسّس Logistic Link، وهي شركة ناشئة في مجال تقنية اللوجستيات بين الشركات (B2B) تركز على أتمتة الشحنات، ومطابقة الناقلين، والعقود الرقمية، وهي مصممة للتكامل مع أنظمة تخطيط موارد المؤسسات. يعمل حالياً على تطوير استراتيجية الدخول إلى السوق والأساس التقني للمنتج.</p>
+          
+        </div>
+      </article>
+      <article class="service-card">
+        <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6 4 4 6-8"/><path d="M15 6h5v5"/></svg></span>
+        <div class="service-body">
+          <h3>مستثمر ملائكي</h3>
+          <p>مستثمر ملائكي نشط يدعم عدداً من الشركات الناشئة في مراحلها المبكرة عبر قطاعات متنوعة، منها الخدمات والترفيه، مساهماً برأس المال إلى جانب خبرته العملية في التقنية وذكاء الأعمال والعمليات التشغيلية لدعم نمو هذه الشركات.</p>
+          
+        </div>
+      </article></div>
+  </div>
+      </section>
+
+      <section id="education" class="section education-section">
+        <div class="container" id="education-mount">
+    
+    <div class="section-heading">
+      <p class="eyebrow">التعليم والتدريب</p>
+      <h2>التعلم المستمر وبناء القدرات الاستراتيجية</h2>
+    </div>
+    <div class="edu-grid">
+      <article class="edu-card">
+        <span class="tag">2025</span>
+        <h3>ماجستير في ريادة الأعمال</h3>
+        <p class="company">Midocean University (برنامج معتمد عن بُعد)</p>
+        <p class="edu-note">أطروحة الماجستير: إطار عمل لنمو وقابلية توسّع الشركات الناشئة القائم على البيانات — بحث تطبيقي في حوكمة البيانات وأطر التحليلات لبيئات الأعمال سريعة النمو.</p>
+      </article>
+      <article class="edu-card">
+        <span class="tag">2014</span>
+        <h3>بكالوريوس نظم المعلومات الحاسوبية</h3>
+        <p class="company">Zaytoonah Private University — عمّان، الأردن</p>
+        
+      </article><article class="edu-card edu-card-wide">
+           <h3>التدريب المهني</h3>
+           <ul class="cert-list"><li><strong>تدريب محترف مؤشرات الأداء الرئيسية المعتمد (Certified KPI Professional)</strong><span>Blue Ocean، الرياض · أبريل 2025</span></li><li><strong>تدريب PMP — محترف إدارة المشاريع</strong><span>UTC (عن بُعد) · نوفمبر 2022</span></li><li><strong>تدريب PBA — تحليل الأعمال الاحترافي</strong><span>UTC (عن بُعد) · فبراير 2022</span></li><li><strong>تدريب التحول الرقمي في الأعمال</strong><span>edX (عن بُعد) · يناير 2021</span></li><li><strong>تدريب ITIL V.4 Foundation</strong><span>New Horizons، الرياض · مايو 2019</span></li></ul>
+         </article><article class="edu-card edu-card-wide">
+           <h3>العمل التطوعي</h3>
+           <p class="edu-note">متطوع إعلامي في دعم حملات توعية إنسانية دولية — الاتصال الاستراتيجي وإنتاج المحتوى الرقمي (2012–2014).</p>
+         </article></div>
+  </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner" id="footer-mount">
+    <div class="footer-copy">
+      <p class="eyebrow">تواصل</p>
+      <h2 class="footer-heading">احجز مكالمة تعارف مجانية (30 دقيقة)</h2>
+      <p class="footer-note">حدّثني عن شركتك والقرار التقني الذي أمامك. المكالمة مجانية ومدتها 30 دقيقة. في نهايتها تعرف إن كانت الخدمة مناسبة، وما الخطوة الأولى، حتى لو قررت أن تكمل وحدك.</p>
+      <a class="button primary footer-cta" href="https://calendar.app.google/v999A6aR7XRWAp5B9" target="_blank" rel="noopener">احجز مكالمة تعارف مجانية (30 دقيقة)</a>
+      <p class="footer-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.3"/></svg><span>الرياض، المملكة العربية السعودية</span></p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:info@mahmoudhawa.com" class="button primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg><bdi dir="ltr">info@mahmoudhawa.com</bdi></a>
+      <a href="https://www.linkedin.com/in/hawamahmoud" class="button secondary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.6a2.4 2.4 0 0 1 4.8 0V17M12 10.5V17"/></svg><span>لينكدإن</span></a>
+    </div>
+    <p class="footer-legal">&copy; 2026 <bdi>محمود حوا</bdi></p>
+  </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="العودة إلى الأعلى">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script type="module" src="../lib/content-loader.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

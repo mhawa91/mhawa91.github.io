@@ -1,132 +1,128 @@
-<!--
-  CONTENT SOURCE FOR THE SITE — edit this file, refresh the browser, done.
-  No HTML editing needed for text changes. Read by lib/content-loader.js.
-
-  SYNTAX GUIDE
-  - Top block between the --- lines: site-wide fields (name, contact, photo, etc.)
-    as `key: value` lines. Wrap a value in quotes only if it needs to start/end
-    with a space; otherwise quotes are optional.
-    `tagline` is split on "|": the first part is the big role line under the
-    name, the remaining parts become small focus-area chips.
-  - `## Section Name` starts a known section (Hero, Stats, About, Services,
-    Achievements, Experience, Entrepreneurship, Education, Certifications,
-    Volunteer).
-    Add `{heading: "Custom heading shown on the page"}` after a `##` line to
-    set the big heading text for that section.
-  - `### Entry Title` starts one card/row within a section (a service, a job,
-    a degree...). Add attributes in curly braces, e.g.
-    `### Business Analyst {company: "Acme Corp", dates: "2020 — 2022"}`.
-    Recognized attributes per section:
-      Services & Entrepreneurship entries: icon (one of: layers, compass,
-        target, chart, link, workflow, contract, shield, rocket, trending)
-      Achievements entries: tag
-      Experience entries: company, note (one-line company descriptor), dates
-      Education entries: school, year
-  - Plain text lines under a section/entry become paragraph text. Blank lines
-    separate paragraphs; wrapped lines with no blank line between them join
-    into one paragraph.
-  - Lines starting with "- " become a bullet list (job highlights, skills,
-    certifications). Experience entries show the first 3 bullets and fold the
-    rest behind a "Show more" button.
-    For Stats, use "- Number | Label" (e.g. "- 12+ | Years of experience") —
-    the part before "|" is the big number, the part after is the caption.
-    For Certifications, use "- Name | Provider · Date" — the part after "|"
-    is shown as the small detail line.
-  - Everything here is plain text: HTML tags are NOT interpreted (they are
-    shown literally), so never paste markup into this file.
--->
 ---
-title: Mahmoud Hawa | Enterprise Applications & Digital Transformation Leader
-description: Mahmoud Hawa is an enterprise applications and digital transformation leader in Riyadh with 12+ years across ERP, IT governance, BI & analytics, and AI adoption.
+title: Mahmoud Hawa | IT Management as a Service for Mid-size Companies in Riyadh
+description: Mahmoud Hawa – IT Management as a Service for Saudi businesses: technology decisions, ERP, governance and AI adoption. Book a discovery call.
 name: Mahmoud Hawa
-tagline: Enterprise Applications & Digital Transformation Leader | ERP | IT Governance | BI & Analytics | AI Adoption
+h1: IT management as a service, before the problem grows.
+eyebrow: Mahmoud Hawa · Riyadh
+tagline: ERP and enterprise applications | Vendors and contracts | Projects and delivery | Governance and AI
 location: Riyadh, Saudi Arabia
-email: mahmoud.hawa91@gmail.com
-phone: +966 540 33 6668
-phone_href: +966540336668
-linkedin_url: https://linkedin.com/in/hawamahmoud
-photo: media/Personal Photo.jpg
+email: info@mahmoudhawa.com
+linkedin_url: https://www.linkedin.com/in/hawamahmoud
+photo: media/photo-800.webp
+photo_srcset: media/photo-420.webp 420w, media/photo-800.webp 800w
+photo_fallback: media/Personal Photo.jpg
+og_title: Mahmoud Hawa | IT Management as a Service
+og_description: Senior IT leadership for your business without a full-time hire: strategy, ERP, vendors, governance and AI adoption.
+og_image: media/og-cover.png
 resume: media/Mahmoud Hawa CV.pdf
 ---
 
 ## Hero
-I manage complex enterprise application portfolios and lead digital transformation across FMCG, construction, and service organizations in Saudi Arabia — connecting ERP, analytics, governance, and generative AI to business strategy and Vision 2030.
+I am Mahmoud Hawa, with 12+ years managing enterprise systems and digital transformation in Saudi Arabia. I help you make the technology decision and see it through: from the needs assessment, to the vendor, to the project, and after go-live. This is leadership and governance, not a helpdesk for devices and networks.
 
 ## Stats
-- 12+ | Years in enterprise technology & BI leadership
-- 15+ | Major projects & system implementations delivered
-- 3 | Industries transformed — construction, FMCG, and food distribution
-- 2,500 | Employees onboarded through an enterprise HR system rollout
-- 100+ | Sales employees digitized across 14 branches
-- 95% | On-time reporting delivery achieved
+- 12+ | Years in enterprise applications
+- 15+ | Major projects and system implementations
 - 2 | ZATCA e-invoicing go-lives delivered ahead of deadline
-- 5 | Enterprise systems integrated into unified reporting pipelines
+- 2,500 | Employees (approx.) onboarded through an enterprise HR system
 
-## About {heading: "Driving enterprise transformation through governance, analytics, and business-aligned technology."}
-Enterprise technology leader with 12+ years of experience managing complex application portfolios and driving digital transformation across FMCG, construction, and service organizations in Saudi Arabia. Currently Business Applications & BI Manager at AL-AYUNI Investment & Contracting Company (AICC), governing an enterprise application portfolio spanning ERP, BPM, corporate performance management, fleet, logistics, project management, and analytics.
+## Definition {heading: "What IT management as a service means"}
+### What is IT management as a service?
+IT management as a service means an outside expert owns a company's technology decisions — needs assessment, system and vendor selection, project oversight, and governance — under a clear agreement, instead of hiring a full-time IT manager. It differs from managed IT support, which focuses on running devices, networks, and fixing incidents.
 
-Track record implementing and integrating SAP S/4HANA, SAP Business One, Microsoft Dynamics GP, SalesBuzz SFA, MenaItech HR, and Power BI; leading RFP and vendor selection; delivering ZATCA/FATOORAH e-invoicing compliance; and building KPI-driven performance management. I apply generative AI tools and AI governance to accelerate analysis, reporting, and automation, aligned with Saudi Arabia's Vision 2030.
+### How is this different from managed IT support?
+Managed IT support answers "who fixes the incident?". IT management as a service answers "what is the right technology decision, and who follows it through?". Many companies need both, and the two can work together.
+
+### What is master data, and why does it matter after an ERP go-live?
+Master data is the reference records every process depends on: customers, vendors, items, and accounts. If each type has no clear owner in the business, records repeat and reports disagree after go-live, however good the system is.
+
+## How {heading: "Four steps, from the first call to follow-up"}
+### Discovery call
+We look at your company and the decision in front of you, and we check that the service fits. The call is free and lasts 30 minutes.
+
+### Assessment
+I review the current systems, processes, and vendors, and I name the gaps and the priorities.
+
+### Written plan
+You receive priorities, responsibilities, scope, and risks in writing.
+
+### Delivery and follow-up
+I follow the vendors and the projects, and I report to management, including after go-live.
+
+## About {heading: "Your technology decision, with someone who has owned it inside companies"}
+I am Mahmoud Hawa. I work with mid-size companies in Saudi Arabia and the GCC on the technology decisions that are expensive to get wrong: which system, which vendor, how the project is run, and how it is governed after go-live.
+
+I have spent 12+ years on enterprise applications and digital transformation in construction, FMCG, and distribution, including SAP, Oracle, and Microsoft Dynamics, vendor selection, project oversight, and data and AI governance. I am currently Business Applications & BI Manager at AL-AYUNI Investment & Contracting Company (AICC).
 
 ### Skills
-- SAP S/4HANA
-- SAP Business One
-- Microsoft Dynamics GP
-- Oracle Fusion Integration
-- Power BI & Power Apps
-- SQL, ETL & Data Integration
-- Application Portfolio Management
-- IT & SLA Governance
-- RFP & Vendor Management
-- KPI & Balanced Scorecard
-- Business Process Management
-- Data Governance & Master Data
-- ZATCA/FATOORAH E-Invoicing
-- Generative AI & AI Governance
-- Program & Change Management
+- ERP selection and integration
+- Vendor selection and RFPs
+- Project oversight and delivery
+- IT governance and service agreements
+- Master data and data governance
+- AI adoption and AI governance
+- Process design before systems
+- Performance and data (KPIs and Power BI)
 
-## Services {heading: "How I help organizations modernize and govern technology"}
-### Application Portfolio Governance {icon: layers}
-Assess, prioritize, and govern enterprise application portfolios with clear ownership models, SLA controls, lifecycle standards, and investment roadmaps.
+## Services {heading: "Four areas of work, plus performance and data when you need it"}
+### Technology decisions and strategy {icon: compass}
+A written view of priorities: what to do now, what to postpone, and how technology spending serves the business. You leave with a prioritized plan.
 
-### Digital Transformation Strategy {icon: compass}
-Design multi-year digital transformation roadmaps that align technology investment with corporate strategy and Vision 2030 priorities.
+### ERP and enterprise applications {icon: link, href: "services/erp-enterprise-apps/"}
+Choose, oversee, and govern ERP and the applications around it, including master data and a project that has stalled. You leave with a comparison and a reasoned recommendation.
 
-### Corporate Performance Management {icon: target}
-Cascade corporate objectives into measurable KPIs across business units — Balanced Scorecard design, KPI libraries, and structured review cadences.
+### Vendor selection and RFPs {icon: contract, href: "services/vendor-selection-rfp/"}
+Requirements, a comparison of proposals, and support through negotiation and service agreements. You leave with a requirements document and an evaluation table.
 
-### BI & Analytics Enablement {icon: chart}
-Build self-service Power BI ecosystems and executive dashboards that turn raw data into timely, trusted decision support.
+### AI adoption and governance {icon: shield, href: "services/ai-adoption-governance/"}
+Where AI tools are already in use, which data may be entered, and a one-page use policy. You leave with that policy and a rollout plan.
 
-### ERP & Enterprise Systems Integration {icon: link}
-Implement and integrate ERP and enterprise platforms — SAP S/4HANA, SAP Business One, Microsoft Dynamics GP, Oracle Fusion, HR, and SFA — with structured ETL, validation, and governance controls.
+### Performance and data {icon: chart}
+KPIs and reporting, including Power BI, as a supporting service under the wider technology leadership. It is not the whole offer.
 
-### Process Digitalization & Automation {icon: workflow}
-Digitize and standardize cross-functional workflows to cut manual effort and support a controlled, paperless operating model.
+## FAQ {heading: "Questions companies ask before the first call"}
+### Who is this for?
+Mid-size companies in Saudi Arabia and the GCC that are making an important technology decision, such as a new ERP, a new vendor, or a digitization project, and that do not have internal technology leadership, or whose technology team needs direction.
 
-### Vendor, RFP & Procurement {icon: contract}
-Lead end-to-end RFP cycles — requirements definition, vendor evaluation, technical and commercial scoring, contract negotiation, and licensing optimization — for risk-informed investment.
+### When is it not a fit?
+When the day-to-day technology workload needs a full-time manager inside the company. In that case I will say so, and I can help describe the role if you want to hire. It is also not a fit when you only need someone to fix devices and networks. That is managed IT support.
 
-### AI Adoption & Data Governance {icon: shield}
-Introduce generative AI tools into business workflows on a foundation of master-data standards, validation controls, and AI governance for trusted, responsible automation.
+### How do we start?
+With a free 30-minute discovery call. We look at the company and the decision in front of you. Afterwards I send a short written note on the proposed first step.
 
-## Achievements {heading: "Selected transformation initiatives"}
-### Enterprise Application Portfolio {tag: "Portfolio Governance"}
-Introduced Application Portfolio Management at AICC — assessment criteria, investment prioritization models, governance standards, and a technology roadmap across ERP, BPM, fleet, logistics, project management, and analytics platforms.
+### Which systems have you worked with?
+SAP S/4HANA and SAP Business One, Microsoft Dynamics GP, Oracle Fusion integration, HR and sales-force systems, Power BI and Power Apps, and ZATCA e-invoicing connections. The detail is in Experience.
 
-### XCore Corporate Performance Framework {tag: "Performance Management"}
-Designed and implemented the XCore Corporate Performance Management Framework on the KIPPY platform, applying Balanced Scorecard principles to cascade corporate objectives into measurable KPIs across business units.
+### Can you help with a troubled ERP project?
+Yes. We start by reviewing scope, data, and governance, then set a clear plan for what to finish and what to change.
 
-### PxM Business Process Management {tag: "Process Automation"}
-Implemented PxM as the Business Process Management platform, digitizing cross-functional workflows, establishing process ownership, and moving to a more controlled, paperless operating environment.
+### Can you help with an AI use policy?
+Yes. The work starts with three steps: list where tools are used today, classify which data may be entered, and write a one-page policy. It is aligned with national references such as SDAIA's AI ethics principles and the Personal Data Protection Law.
 
-### ZATCA/FATOORAH E-Invoicing {tag: "Regulatory Compliance"}
-Led two e-invoicing compliance implementations — SAP Business One with ClearTax and SalesBuzz SFA with SalesBuzz E-Invoice — achieving full regulatory readiness ahead of the enforcement deadlines.
+### Where do you work?
+I am based in Riyadh. I work with companies across Saudi Arabia and the GCC.
 
-### Sales Force & HR Digitization {tag: "Enterprise Rollouts"}
-Implemented SalesBuzz SFA for 100+ sales employees across 14 branches and MenaItech HR for about 2,500 employees, both integrated with SAP Business One.
+## Achievements {heading: "Selected initiatives"}
+### Application portfolio governance {tag: "Portfolio"}
+Introduced application portfolio management: assessment criteria, investment priorities, governance standards, and a technology roadmap across ERP, operations, fleet, logistics, projects, and analytics.
 
-### Generative AI in Business Applications {tag: "AI Adoption"}
-Introduced generative AI tools (ChatGPT, Claude, Microsoft Copilot, Manus) into business-applications and BI workflows, accelerating data analysis, management reporting, and process automation.
+### Corporate performance framework {tag: "Performance"}
+Designed and implemented the XCore corporate performance framework on the KIPPY platform, cascading company objectives into measurable KPIs.
+
+### Business process platform {tag: "Processes"}
+Implemented PxM as the process platform, digitizing cross-functional workflows and making ownership of each process explicit.
+
+### ZATCA e-invoicing {tag: "Compliance"}
+Led two e-invoicing go-lives, one on ERP and one on a sales-force system, both ready before the enforcement deadline.
+
+### Sales force and HR rollout {tag: "Rollouts"}
+Rolled out a sales-force system for 100+ people across 14 branches and an HR system for about 2,500 employees, both connected to ERP.
+
+### AI in day-to-day work {tag: "AI adoption"}
+Introduced generative AI tools into business-application and reporting work, with governance around how they are used.
+
+## Contact {heading: "Book a free 30-minute discovery call"}
+Tell me about your company and the technology decision in front of you. The call is free and lasts 30 minutes. By the end you will know whether the service fits, and what the first step is, even if you decide to continue on your own.
 
 ## Experience {heading: "Career highlights"}
 ### Business Applications & BI Manager {company: "AL-AYUNI Investment & Contracting Company (AICC)", note: "Leading Saudi construction and investment group", dates: "Oct 2024 — Present"}
