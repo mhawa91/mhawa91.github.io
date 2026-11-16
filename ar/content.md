@@ -6,7 +6,7 @@ h1: إدارة تقنية المعلومات كخدمة، قبل أن تتسع �
 eyebrow: محمود حوا · الرياض
 tagline: الأنظمة وERP | الموردون والعقود | المشاريع والتسليم | حوكمة التقنية والذكاء الاصطناعي
 location: الرياض، المملكة العربية السعودية
-email: mahmoud.hawa91@gmail.com
+email: info@mahmoudhawa.com
 linkedin_url: https://www.linkedin.com/in/hawamahmoud
 photo: media/photo-800.webp
 photo_srcset: media/photo-420.webp 420w, media/photo-800.webp 800w
@@ -71,7 +71,7 @@ resume: media/Mahmoud Hawa CV.pdf
 ### الأنظمة وERP {icon: link, href: "services/erp-enterprise-apps/"}
 اختيار أنظمة ERP وتطبيقات المؤسسات والإشراف عليها وحوكمتها، بما في ذلك البيانات الأساسية والمشروع المتعثر. المخرج مقارنة وتوصية مبررة.
 
-### الموردون وكراسات الشروط {icon: contract, href: "services/vendor-selection-rfp/"}
+### اختيار الموردين وكراسات الشروط {icon: contract, href: "services/vendor-selection-rfp/"}
 المتطلبات، ومقارنة العروض، والمساندة في التفاوض واتفاقيات مستوى الخدمة. المخرج وثيقة متطلبات وجدول تقييم.
 
 ### تبني الذكاء الاصطناعي وحوكمته {icon: shield, href: "services/ai-adoption-governance/"}

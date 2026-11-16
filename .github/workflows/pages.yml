@@ -86,9 +86,18 @@ jobs:
           if [ -f src/main/CNAME ]; then
             cp src/main/CNAME public/CNAME
           fi
-          # Root-only files (served once, from production): crawler rules,
-          # the sitemap, llms.txt, and the RFC 9116 security contact.
-          for item in robots.txt sitemap.xml llms.txt; do
+          # Root-only files (served once, from the live site root):
+          # crawler rules, the sitemap, llms.txt, and the RFC 9116 contact.
+          # Prefer main. If main does not yet have robots.txt, copy it from
+          # staging so /staging/ is disallowed immediately. Do not copy
+          # sitemap.xml or llms.txt from staging — they list URLs that are
+          # not on the live site until main is updated.
+          if [ -f src/main/robots.txt ]; then
+            cp src/main/robots.txt public/robots.txt
+          elif [ -f src/staging/robots.txt ]; then
+            cp src/staging/robots.txt public/robots.txt
+          fi
+          for item in sitemap.xml llms.txt; do
             if [ -f "src/main/$item" ]; then
               cp "src/main/$item" "public/$item"
             fi
@@ -96,14 +105,22 @@ jobs:
           if [ -f src/main/.well-known/security.txt ]; then
             mkdir -p public/.well-known
             cp src/main/.well-known/security.txt public/.well-known/security.txt
+          elif [ -f src/staging/.well-known/security.txt ]; then
+            mkdir -p public/.well-known
+            cp src/staging/.well-known/security.txt public/.well-known/security.txt
           fi
 
           if [ -f src/staging/index.html ]; then
             publish src/staging public/staging
-            # Keep the staging preview out of search engines with a static tag
-            # in the served HTML (not only via JS).
-            sed -i 's|<meta charset="UTF-8" />|&\n    <meta name="robots" content="noindex, nofollow" />|' public/staging/index.html
-            grep -q 'name="robots" content="noindex, nofollow"' public/staging/index.html
+            # Keep every staging preview page out of search indexes, not only
+            # the English homepage (Arabic and service pages included).
+            while IFS= read -r -d '' file; do
+              if ! grep -q 'name="robots" content="noindex, nofollow"' "$file"; then
+                sed -i 's|<meta charset="UTF-8" />|&\n    <meta name="robots" content="noindex, nofollow" />|' "$file"
+              fi
+              grep -q 'name="robots" content="noindex, nofollow"' "$file"
+            done < <(find public/staging -type f -name '*.html' -print0)
+            printf '%s\n' 'User-agent: *' 'Disallow: /' > public/staging/robots.txt
           else
             echo "::notice::No staging branch content found - publishing production only."
           fi
