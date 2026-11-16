@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
   const targets = navLinks
-    .map((link) => ({ link, section: document.querySelector(link.getAttribute('href')) }))
+    .map((link) => {
+      // Service pages link back to home-page sections ("../../#about"); only
+      // same-page anchors can be looked up, so skip anything else.
+      const href = link.getAttribute('href') || '';
+      if (!/^#[A-Za-z][\w-]*$/.test(href)) return { link, section: null };
+      return { link, section: document.getElementById(href.slice(1)) };
+    })
     .filter((t) => t.section);
   const header = document.querySelector('.site-header');
   const backToTop = document.getElementById('back-to-top');

@@ -8,7 +8,7 @@ og_description: List where AI tools are used, decide which data may be entered, 
 ---
 
 ## Short answer
-AI governance here is the rules for who may use AI tools, for what, with which data, and who reviews the result before it is relied on. It usually starts with two facts: where the tools are used today, and a one-page policy.
+AI governance here is the rules for who may use AI tools, for what, with which data, and who reviews the result before it is relied on. It starts with three steps: list where AI tools are used today, decide which data may be entered, and write a one-page policy.
 
 ## Three steps
 ### 1. List current use
