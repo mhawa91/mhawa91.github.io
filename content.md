@@ -18,13 +18,13 @@ resume: media/Mahmoud Hawa CV.pdf
 ---
 
 ## Hero
-I am Mahmoud Hawa, with 12+ years managing enterprise systems and digital transformation in Saudi Arabia. I take the technology decision with you: from the needs assessment, to the vendor, to the project, and after go-live. This is leadership and governance, not a helpdesk for devices and networks.
+I am Mahmoud Hawa, with 12+ years managing enterprise systems and digital transformation in Saudi Arabia. I help you make the technology decision and see it through: from the needs assessment, to the vendor, to the project, and after go-live. This is leadership and governance, not a helpdesk for devices and networks.
 
 ## Stats
 - 12+ | Years in enterprise applications
 - 15+ | Major projects and system implementations
 - 2 | ZATCA e-invoicing go-lives delivered ahead of deadline
-- 2,500 | Employees onboarded through an enterprise HR system
+- 2,500 | Employees (approx.) onboarded through an enterprise HR system
 
 ## Definition {heading: "What IT management as a service means"}
 ### What is IT management as a service?
@@ -49,8 +49,8 @@ You receive priorities, responsibilities, scope, and risks in writing.
 ### Delivery and follow-up
 I follow the vendors and the projects, and I report to management, including after go-live.
 
-## About {heading: "Technology decisions, with someone who has carried them inside a company"}
-I am Mahmoud Hawa. I work with mid-size companies in Saudi Arabia and the GCC on the technology decisions that are expensive to get wrong: which system, which vendor, how the project is run, and how it is governed afterwards.
+## About {heading: "Your technology decision, with someone who has owned it inside companies"}
+I am Mahmoud Hawa. I work with mid-size companies in Saudi Arabia and the GCC on the technology decisions that are expensive to get wrong: which system, which vendor, how the project is run, and how it is governed after go-live.
 
 I have spent 12+ years on enterprise applications and digital transformation in construction, FMCG, and distribution, including SAP, Oracle, and Microsoft Dynamics, vendor selection, project oversight, and data and AI governance. I am currently Business Applications & BI Manager at AL-AYUNI Investment & Contracting Company (AICC).
 
@@ -66,7 +66,7 @@ I have spent 12+ years on enterprise applications and digital transformation in 
 
 ## Services {heading: "Four areas of work, plus performance and data when you need it"}
 ### Technology decisions and strategy {icon: compass}
-A written view of priorities: what to do now, what to postpone, and how technology spending follows the business. You leave with a prioritized plan.
+A written view of priorities: what to do now, what to postpone, and how technology spending serves the business. You leave with a prioritized plan.
 
 ### ERP and enterprise applications {icon: link, href: "services/erp-enterprise-apps/"}
 Choose, oversee, and govern ERP and the applications around it, including master data and a project that has stalled. You leave with a comparison and a reasoned recommendation.
