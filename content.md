@@ -37,16 +37,16 @@ Managed IT support answers "who fixes the incident?". IT management as a service
 Master data is the reference records every process depends on: customers, vendors, items, and accounts. If each type has no clear owner in the business, records repeat and reports disagree after go-live, however good the system is.
 
 ## How {heading: "Four steps, from the first call to follow-up"}
-### 1. Discovery call
+### Discovery call
 We look at your company and the decision in front of you, and we check that the service fits. The call is free and lasts 30 minutes.
 
-### 2. Assessment
+### Assessment
 I review the current systems, processes, and vendors, and I name the gaps and the priorities.
 
-### 3. Written plan
+### Written plan
 You receive priorities, responsibilities, scope, and risks in writing.
 
-### 4. Delivery and follow-up
+### Delivery and follow-up
 I follow the vendors and the projects, and I report to management, including after go-live.
 
 ## About {heading: "Technology decisions, with someone who has carried them inside a company"}
