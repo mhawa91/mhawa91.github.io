@@ -85,6 +85,20 @@ function fill(shell, lang) {
   html = setByAttr(html, 'property', 'og:locale', 'content', lang === 'ar' ? 'ar_SA' : 'en_US');
   const back = t('controls.backToTop', lang);
   html = html.replace(/(<button id="back-to-top"[^>]*aria-label=")[^"]*(")/, `$1${esc(back)}$2`);
+  html = html.replace(/(<a class="skip-link"[^>]*>)[^<]*(<\/a>)/, `$1${esc(t('controls.skip', lang))}$2`);
+  html = html.replace(/(<nav class="nav container" aria-label=")[^"]*(")/, `$1${esc(t('controls.primaryNav', lang))}$2`);
+  html = html.replace(/(<span class="sr-only" id="nav-brand-name">)[^<]*(<\/span>)/, `$1${esc(meta.name || '')}$2`);
+  html = html.replace(/(<section class="section stats-section" aria-label=")[^"]*(")/, `$1${esc(t('controls.stats', lang))}$2`);
+  html = html.replace(/(<button id="theme-toggle"[^>]*aria-label=")[^"]*(")/, `$1${esc(t('controls.themeToLight', lang))}$2`);
+  html = html.replace(/(aria-label="Open menu")/, `aria-label="${esc(t('controls.menuOpen', lang))}"`);
+  if (meta.email) {
+    html = html.replace(/mailto:mahmoud\.hawa91@gmail\.com/g, `mailto:${meta.email}`);
+    html = html.replace(/mailto:info@mahmoudhawa\.com/g, `mailto:${meta.email}`);
+    html = html.replace(/"email": "mahmoud\.hawa91@gmail\.com"/g, `"email": "${meta.email}"`);
+    html = html.replace(/"email": "info@mahmoudhawa\.com"/g, `"email": "${meta.email}"`);
+    html = html.replace(/"email": "mailto:mahmoud\.hawa91@gmail\.com"/g, `"email": "mailto:${meta.email}"`);
+    html = html.replace(/"email": "mailto:info@mahmoudhawa\.com"/g, `"email": "mailto:${meta.email}"`);
+  }
   html = injectSchema(stripGeneratedSchema(html), sections);
   return { html, meta };
 }
@@ -139,11 +153,29 @@ function injectSchema(html, sections) {
   return html.replace('</head>', `<script type="application/ld+json">\n${json}\n</script>\n</head>`);
 }
 
-function prefixRelative(html, prefix) {
+function prefixRelative(html, prefix, options = {}) {
   if (!prefix) return html;
-  return html.replace(/(href|src)="(?!https?:|#|mailto:|tel:|\/\/)([^"]*)"/g, (full, attr, url) => {
-    return `${attr}="${prefix}${url}"`;
+  const keep = options.keepPrefixes || [];
+  const shouldKeep = (url) => keep.some((item) => url === item || url.startsWith(item));
+  const prefixUrl = (url) => {
+    if (!url || /^(https?:|#|mailto:|tel:|\/\/)/.test(url)) return url;
+    if (shouldKeep(url) || url.startsWith(prefix)) return url;
+    return `${prefix}${url}`;
+  };
+  html = html.replace(/(href|src)="([^"]*)"/g, (full, attr, url) => `${attr}="${prefixUrl(url)}"`);
+  html = html.replace(/srcset="([^"]*)"/g, (full, value) => {
+    const next = value
+      .split(',')
+      .map((part) => {
+        const bits = part.trim().split(/\s+/);
+        if (!bits[0]) return part.trim();
+        const url = prefixUrl(bits[0]);
+        return bits[1] ? `${url} ${bits[1]}` : url;
+      })
+      .join(', ');
+    return `srcset="${next}"`;
   });
+  return html;
 }
 
 function hashScripts(html) {
@@ -185,7 +217,7 @@ const en = fill(shell, 'en');
 writeFileSync(join(root, 'index.html'), hashScripts(en.html));
 
 let arHtml = fill(shell, 'ar').html;
-arHtml = prefixRelative(arHtml, '../');
+arHtml = prefixRelative(arHtml, '../', { keepPrefixes: ['services/'] });
 arHtml = arHtml.replace(
   /<a id="lang-toggle"[^>]*>[\s\S]*?<\/a>/,
   '<a id="lang-toggle" class="control-btn" href="../" hreflang="en" lang="en" aria-label="EN – Switch language to English">EN</a>'

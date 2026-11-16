@@ -2,11 +2,11 @@
 title: Mahmoud Hawa | IT Management as a Service for Mid-size Companies in Riyadh
 description: Mahmoud Hawa – IT Management as a Service for Saudi businesses: technology decisions, ERP, governance and AI adoption. Book a discovery call.
 name: Mahmoud Hawa
-h1: IT management as a service: the technology decisions, owned.
+h1: IT management as a service, before the problem grows.
 eyebrow: Mahmoud Hawa · Riyadh
 tagline: ERP and enterprise applications | Vendors and contracts | Projects and delivery | Governance and AI
 location: Riyadh, Saudi Arabia
-email: mahmoud.hawa91@gmail.com
+email: info@mahmoudhawa.com
 linkedin_url: https://www.linkedin.com/in/hawamahmoud
 photo: media/photo-800.webp
 photo_srcset: media/photo-420.webp 420w, media/photo-800.webp 800w
